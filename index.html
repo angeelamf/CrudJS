@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coppel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+</head>
+
+<body>
+    <div class="container ">
+        <div class="columns">
+            <div class="column has-text-centered">
+                <h1 clas="is-size-1">Coppel CRUD Practica</h1>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-half">
+                <div class="select">
+                    <select id="inventario">
+                        <option value="" disabled selected>Seleccione Inventario</option>
+                    </select>
+                </div>
+                <div class="select">
+                    <select id="empleado">
+                        <option value="" disabled selected>Seleccione Empleado</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <input id="cantidad" class="input" type="number" placeholder="Cantidad">
+                </div>
+                
+                <button class="button is-primary" onclick="guardarPoliza()">Guardar Poliza</button>
+                
+                <div id="message" class="notification is-primary" style="visibility: hidden;">
+                    <button class="delete" aria-label="delete" onclick="closeMessage()"></button>
+                    <span id="message-content"></span>
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <input id="email" class="input" type="text" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <input id="password" class="input" type="text" placeholder="Contraseña">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="button is-primary" onclick="signIn()">Generate Token</button>
+
+                <div class="columns">
+                    <div class="column">
+                        <p id="token" style="word-break: break-all;"></p>                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+       
+        <div class="columns is-full">  
+            <div class="column">
+                <button class="button is-primary" onclick="showPolizas()">Ver Polizas</button>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <table class="table is-bordered is-striped" id="poliza-table">
+                    <thead>
+                        <th>Id Poliza</th>
+                        <th>Cantidad</th>
+                        <th>Empleado</th>
+                        <th>Articulo Sku</th>
+                        <th>Nombre Articulo</th>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./services.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
